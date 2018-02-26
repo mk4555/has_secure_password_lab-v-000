@@ -6,4 +6,9 @@ class SessionsController < ApplicationController
   def create
     @user = User.new(user_params)
   end
+
+  def user_params
+    params.require(:user).permit(:name, :password)
+  end
+  
 end
